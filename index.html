@@ -1,1549 +1,980 @@
+
+
+
+<!--
+=========================================================
+* Material Dashboard 2 - v3.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://www.creative-tim.com/license)
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<!-- Basic Page Info -->
-		<meta charset="utf-8" />
-		<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+<html lang="en">
+  <head>
 
-		<!-- Site favicon -->
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="vendors/images/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="vendors/images/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="vendors/images/favicon-16x16.png"
-		/>
 
-		<!-- Mobile Specific Metas -->
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, maximum-scale=1"
-		/>
 
-		<!-- Google Font -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-			rel="stylesheet"
-		/>
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="vendors/styles/icon-font.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="src/plugins/datatables/css/dataTables.bootstrap4.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="src/plugins/datatables/css/responsive.bootstrap4.min.css"
-		/>
-		<link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"
-		></script>
-		<script
-			async
-			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
-			crossorigin="anonymous"
-		></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
 
-			gtag("config", "G-GBZ3SGGX85");
-		</script>
-		<!-- Google Tag Manager -->
-		<script>
-			(function (w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-				var f = d.getElementsByTagName(s)[0],
-					j = d.createElement(s),
-					dl = l != "dataLayer" ? "&l=" + l : "";
-				j.async = true;
-				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-				f.parentNode.insertBefore(j, f);
-			})(window, document, "script", "dataLayer", "GTM-NXZMQSS");
-		</script>
-		<!-- End Google Tag Manager -->
-	</head>
-	<body>
-		<div class="pre-loader">
-			<div class="pre-loader-box">
-				<div class="loader-logo">
-					<img src="vendors/images/deskapp-logo.svg" alt="" />
-				</div>
-				<div class="loader-progress" id="progress_div">
-					<div class="bar" id="bar1"></div>
-				</div>
-				<div class="percent" id="percent1">0%</div>
-				<div class="loading-text">Loading...</div>
-			</div>
-		</div>
 
-		<div class="header">
-			<div class="header-left">
-				<div class="menu-icon bi bi-list"></div>
-				<div
-					class="search-toggle-icon bi bi-search"
-					data-toggle="header_search"
-				></div>
-				<div class="header-search">
-					<form>
-						<div class="form-group mb-0">
-							<i class="dw dw-search2 search-icon"></i>
-							<input
-								type="text"
-								class="form-control search-input"
-								placeholder="Search Here"
-							/>
-							<div class="dropdown">
-								<a
-									class="dropdown-toggle no-arrow"
-									href="#"
-									role="button"
-									data-toggle="dropdown"
-								>
-									<i class="ion-arrow-down-c"></i>
-								</a>
-								<div class="dropdown-menu dropdown-menu-right">
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label"
-											>From</label
-										>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label">To</label>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="form-group row">
-										<label class="col-sm-12 col-md-2 col-form-label"
-											>Subject</label
-										>
-										<div class="col-sm-12 col-md-10">
-											<input
-												class="form-control form-control-sm form-control-line"
-												type="text"
-											/>
-										</div>
-									</div>
-									<div class="text-right">
-										<button class="btn btn-primary">Search</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="header-right">
-				<div class="dashboard-setting user-notification">
-					<div class="dropdown">
-						<a
-							class="dropdown-toggle no-arrow"
-							href="javascript:;"
-							data-toggle="right-sidebar"
-						>
-							<i class="dw dw-settings2"></i>
-						</a>
-					</div>
-				</div>
-				<div class="user-notification">
-					<div class="dropdown">
-						<a
-							class="dropdown-toggle no-arrow"
-							href="#"
-							role="button"
-							data-toggle="dropdown"
-						>
-							<i class="icon-copy dw dw-notification"></i>
-							<span class="badge notification-active"></span>
-						</a>
-						<div class="dropdown-menu dropdown-menu-right">
-							<div class="notification-list mx-h-350 customscroll">
-								<ul>
-									<li>
-										<a href="#">
-											<img src="vendors/images/img.jpg" alt="" />
-											<h3>John Doe</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="vendors/images/photo1.jpg" alt="" />
-											<h3>Lea R. Frith</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="vendors/images/photo2.jpg" alt="" />
-											<h3>Erik L. Richards</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="vendors/images/photo3.jpg" alt="" />
-											<h3>John Doe</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="vendors/images/photo4.jpg" alt="" />
-											<h3>Renee I. Hansen</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="vendors/images/img.jpg" alt="" />
-											<h3>Vicki M. Coleman</h3>
-											<p>
-												Lorem ipsum dolor sit amet, consectetur adipisicing
-												elit, sed...
-											</p>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="user-info-dropdown">
-					<div class="dropdown">
-						<a
-							class="dropdown-toggle"
-							href="#"
-							role="button"
-							data-toggle="dropdown"
-						>
-							<span class="user-icon">
-								<img src="vendors/images/photo1.jpg" alt="" />
-							</span>
-							<span class="user-name">Ross C. Lopez</span>
-						</a>
-						<div
-							class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
-						>
-							<a class="dropdown-item" href="profile.html"
-								><i class="dw dw-user1"></i> Profile</a
-							>
-							<a class="dropdown-item" href="profile.html"
-								><i class="dw dw-settings2"></i> Setting</a
-							>
-							<a class="dropdown-item" href="faq.html"
-								><i class="dw dw-help"></i> Help</a
-							>
-							<a class="dropdown-item" href="login.html"
-								><i class="dw dw-logout"></i> Log Out</a
-							>
-						</div>
-					</div>
-				</div>
-				<div class="github-link">
-					<a href="https://github.com/dropways/deskapp" target="_blank"
-						><img src="vendors/images/github.svg" alt=""
-					/></a>
-				</div>
-			</div>
-		</div>
 
-		<div class="right-sidebar">
-			<div class="sidebar-title">
-				<h3 class="weight-600 font-16 text-blue">
-					Layout Settings
-					<span class="btn-block font-weight-400 font-12"
-						>User Interface Settings</span
-					>
-				</h3>
-				<div class="close-sidebar" data-toggle="right-sidebar-close">
-					<i class="icon-copy ion-close-round"></i>
-				</div>
-			</div>
-			<div class="right-sidebar-body customscroll">
-				<div class="right-sidebar-body-content">
-					<h4 class="weight-600 font-18 pb-10">Header Background</h4>
-					<div class="sidebar-btn-group pb-30 mb-10">
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary header-white active"
-							>White</a
-						>
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary header-dark"
-							>Dark</a
-						>
-					</div>
 
-					<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
-					<div class="sidebar-btn-group pb-30 mb-10">
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary sidebar-light"
-							>White</a
-						>
-						<a
-							href="javascript:void(0);"
-							class="btn btn-outline-primary sidebar-dark active"
-							>Dark</a
-						>
-					</div>
 
-					<h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
-					<div class="sidebar-radio-group pb-10 mb-10">
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-1"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-1"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebaricon-1"
-								><i class="fa fa-angle-down"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-2"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-2"
-							/>
-							<label class="custom-control-label" for="sidebaricon-2"
-								><i class="ion-plus-round"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebaricon-3"
-								name="menu-dropdown-icon"
-								class="custom-control-input"
-								value="icon-style-3"
-							/>
-							<label class="custom-control-label" for="sidebaricon-3"
-								><i class="fa fa-angle-double-right"></i
-							></label>
-						</div>
-					</div>
 
-					<h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
-					<div class="sidebar-radio-group pb-30 mb-10">
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-1"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-1"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebariconlist-1"
-								><i class="ion-minus-round"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-2"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-2"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-2"
-								><i class="fa fa-circle-o" aria-hidden="true"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-3"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-3"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-3"
-								><i class="dw dw-check"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-4"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-4"
-								checked=""
-							/>
-							<label class="custom-control-label" for="sidebariconlist-4"
-								><i class="icon-copy dw dw-next-2"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-5"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-5"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-5"
-								><i class="dw dw-fast-forward-1"></i
-							></label>
-						</div>
-						<div class="custom-control custom-radio custom-control-inline">
-							<input
-								type="radio"
-								id="sidebariconlist-6"
-								name="menu-list-icon"
-								class="custom-control-input"
-								value="icon-list-style-6"
-							/>
-							<label class="custom-control-label" for="sidebariconlist-6"
-								><i class="dw dw-next"></i
-							></label>
-						</div>
-					</div>
 
-					<div class="reset-options pt-30 text-center">
-						<button class="btn btn-danger" id="reset-settings">
-							Reset Settings
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
-		<div class="left-side-bar">
-			<div class="brand-logo">
-				<a href="index.html">
-					<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo" />
-					<img
-						src="vendors/images/deskapp-logo-white.svg"
-						alt=""
-						class="light-logo"
-					/>
-				</a>
-				<div class="close-sidebar" data-toggle="left-sidebar-close">
-					<i class="ion-close-round"></i>
-				</div>
-			</div>
-			<div class="menu-block customscroll">
-				<div class="sidebar-menu">
-					<ul id="accordion-menu">
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-house"></span
-								><span class="mtext">Home</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="index.html">Dashboard style 1</a></li>
-								<li><a href="index2.html">Dashboard style 2</a></li>
-								<li><a href="index3.html">Dashboard style 3</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-textarea-resize"></span
-								><span class="mtext">Forms</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="form-basic.html">Form Basic</a></li>
-								<li>
-									<a href="advanced-components.html">Advanced Components</a>
-								</li>
-								<li><a href="form-wizard.html">Form Wizard</a></li>
-								<li><a href="html5-editor.html">HTML5 Editor</a></li>
-								<li><a href="form-pickers.html">Form Pickers</a></li>
-								<li><a href="image-cropper.html">Image Cropper</a></li>
-								<li><a href="image-dropzone.html">Image Dropzone</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-table"></span
-								><span class="mtext">Tables</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="basic-table.html">Basic Tables</a></li>
-								<li><a href="datatable.html">DataTables</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="calendar.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-calendar4-week"></span
-								><span class="mtext">Calendar</span>
-							</a>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-archive"></span
-								><span class="mtext"> UI Elements </span>
-							</a>
-							<ul class="submenu">
-								<li><a href="ui-buttons.html">Buttons</a></li>
-								<li><a href="ui-cards.html">Cards</a></li>
-								<li><a href="ui-cards-hover.html">Cards Hover</a></li>
-								<li><a href="ui-modals.html">Modals</a></li>
-								<li><a href="ui-tabs.html">Tabs</a></li>
-								<li>
-									<a href="ui-tooltip-popover.html">Tooltip &amp; Popover</a>
-								</li>
-								<li><a href="ui-sweet-alert.html">Sweet Alert</a></li>
-								<li><a href="ui-notification.html">Notification</a></li>
-								<li><a href="ui-timeline.html">Timeline</a></li>
-								<li><a href="ui-progressbar.html">Progressbar</a></li>
-								<li><a href="ui-typography.html">Typography</a></li>
-								<li><a href="ui-list-group.html">List group</a></li>
-								<li><a href="ui-range-slider.html">Range slider</a></li>
-								<li><a href="ui-carousel.html">Carousel</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-command"></span
-								><span class="mtext">Icons</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="bootstrap-icon.html">Bootstrap Icons</a></li>
-								<li><a href="font-awesome.html">FontAwesome Icons</a></li>
-								<li><a href="foundation.html">Foundation Icons</a></li>
-								<li><a href="ionicons.html">Ionicons Icons</a></li>
-								<li><a href="themify.html">Themify Icons</a></li>
-								<li><a href="custom-icon.html">Custom Icons</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-pie-chart"></span
-								><span class="mtext">Charts</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="highchart.html">Highchart</a></li>
-								<li><a href="knob-chart.html">jQuery Knob</a></li>
-								<li><a href="jvectormap.html">jvectormap</a></li>
-								<li><a href="apexcharts.html">Apexcharts</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-file-earmark-text"></span
-								><span class="mtext">Additional Pages</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="video-player.html">Video Player</a></li>
-								<li><a href="login.html">Login</a></li>
-								<li><a href="forgot-password.html">Forgot Password</a></li>
-								<li><a href="reset-password.html">Reset Password</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-bug"></span
-								><span class="mtext">Error Pages</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="400.html">400</a></li>
-								<li><a href="403.html">403</a></li>
-								<li><a href="404.html">404</a></li>
-								<li><a href="500.html">500</a></li>
-								<li><a href="503.html">503</a></li>
-							</ul>
-						</li>
 
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-back"></span
-								><span class="mtext">Extra Pages</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="blank.html">Blank</a></li>
-								<li><a href="contact-directory.html">Contact Directory</a></li>
-								<li><a href="blog.html">Blog</a></li>
-								<li><a href="blog-detail.html">Blog Detail</a></li>
-								<li><a href="product.html">Product</a></li>
-								<li><a href="product-detail.html">Product Detail</a></li>
-								<li><a href="faq.html">FAQ</a></li>
-								<li><a href="profile.html">Profile</a></li>
-								<li><a href="gallery.html">Gallery</a></li>
-								<li><a href="pricing-table.html">Pricing Tables</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-hdd-stack"></span
-								><span class="mtext">Multi Level Menu</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="javascript:;">Level 1</a></li>
-								<li><a href="javascript:;">Level 1</a></li>
-								<li><a href="javascript:;">Level 1</a></li>
-								<li class="dropdown">
-									<a href="javascript:;" class="dropdown-toggle">
-										<span class="micon fa fa-plug"></span
-										><span class="mtext">Level 2</span>
-									</a>
-									<ul class="submenu child">
-										<li><a href="javascript:;">Level 2</a></li>
-										<li><a href="javascript:;">Level 2</a></li>
-									</ul>
-								</li>
-								<li><a href="javascript:;">Level 1</a></li>
-								<li><a href="javascript:;">Level 1</a></li>
-								<li><a href="javascript:;">Level 1</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="sitemap.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-diagram-3"></span
-								><span class="mtext">Sitemap</span>
-							</a>
-						</li>
-						<li>
-							<a href="chat.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-chat-right-dots"></span
-								><span class="mtext">Chat</span>
-							</a>
-						</li>
-						<li>
-							<a href="invoice.html" class="dropdown-toggle no-arrow">
-								<span class="micon bi bi-receipt-cutoff"></span
-								><span class="mtext">Invoice</span>
-							</a>
-						</li>
-						<li>
-							<div class="dropdown-divider"></div>
-						</li>
-						<li>
-							<div class="sidebar-small-cap">Extra</div>
-						</li>
-						<li>
-							<a href="javascript:;" class="dropdown-toggle">
-								<span class="micon bi bi-file-pdf"></span
-								><span class="mtext">Documentation</span>
-							</a>
-							<ul class="submenu">
-								<li><a href="introduction.html">Introduction</a></li>
-								<li><a href="getting-started.html">Getting Started</a></li>
-								<li><a href="color-settings.html">Color Settings</a></li>
-								<li>
-									<a href="third-party-plugins.html">Third Party Plugins</a>
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a
-								href="https://dropways.github.io/deskapp-free-single-page-website-template/"
-								target="_blank"
-								class="dropdown-toggle no-arrow"
-							>
-								<span class="micon bi bi-layout-text-window-reverse"></span>
-								<span class="mtext"
-									>Landing Page
-									<img src="vendors/images/coming-soon.png" alt="" width="25"
-								/></span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="mobile-menu-overlay"></div>
 
-		<div class="main-container">
-			<div class="xs-pd-20-10 pd-ltr-20">
-				<div class="title pb-20">
-					<h2 class="h3 mb-0">Hospital Overview</h2>
-				</div>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-				<div class="row pb-10">
-					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-						<div class="card-box height-100-p widget-style3">
-							<div class="d-flex flex-wrap">
-								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">75</div>
-									<div class="font-14 text-secondary weight-500">
-										Appointment
-									</div>
-								</div>
-								<div class="widget-icon">
-									<div class="icon" data-color="#00eccf">
-										<i class="icon-copy dw dw-calendar1"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-						<div class="card-box height-100-p widget-style3">
-							<div class="d-flex flex-wrap">
-								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">124,551</div>
-									<div class="font-14 text-secondary weight-500">
-										Total Patient
-									</div>
-								</div>
-								<div class="widget-icon">
-									<div class="icon" data-color="#ff5b5b">
-										<span class="icon-copy ti-heart"></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-						<div class="card-box height-100-p widget-style3">
-							<div class="d-flex flex-wrap">
-								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">400+</div>
-									<div class="font-14 text-secondary weight-500">
-										Total Doctor
-									</div>
-								</div>
-								<div class="widget-icon">
-									<div class="icon">
-										<i
-											class="icon-copy fa fa-stethoscope"
-											aria-hidden="true"
-										></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-lg-3 col-md-6 mb-20">
-						<div class="card-box height-100-p widget-style3">
-							<div class="d-flex flex-wrap">
-								<div class="widget-data">
-									<div class="weight-700 font-24 text-dark">$50,000</div>
-									<div class="font-14 text-secondary weight-500">Earning</div>
-								</div>
-								<div class="widget-icon">
-									<div class="icon" data-color="#09cc06">
-										<i class="icon-copy fa fa-money" aria-hidden="true"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
+<link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
-				<div class="row pb-10">
-					<div class="col-md-8 mb-20">
-						<div class="card-box height-100-p pd-20">
-							<div
-								class="d-flex flex-wrap justify-content-between align-items-center pb-0 pb-md-3"
-							>
-								<div class="h5 mb-md-0">Hospital Activities</div>
-								<div class="form-group mb-md-0">
-									<select class="form-control form-control-sm selectpicker">
-										<option value="">Last Week</option>
-										<option value="">Last Month</option>
-										<option value="">Last 6 Month</option>
-										<option value="">Last 1 year</option>
-									</select>
-								</div>
-							</div>
-							<div id="activities-chart"></div>
-						</div>
-					</div>
-					<div class="col-md-4 mb-20">
-						<div
-							class="card-box min-height-200px pd-20 mb-20"
-							data-bgcolor="#455a64"
-						>
-							<div class="d-flex justify-content-between pb-20 text-white">
-								<div class="icon h1 text-white">
-									<i class="fa fa-calendar" aria-hidden="true"></i>
-									<!-- <i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i> -->
-								</div>
-								<div class="font-14 text-right">
-									<div><i class="icon-copy ion-arrow-up-c"></i> 2.69%</div>
-									<div class="font-12">Since last month</div>
-								</div>
-							</div>
-							<div class="d-flex justify-content-between align-items-end">
-								<div class="text-white">
-									<div class="font-14">Appointment</div>
-									<div class="font-24 weight-500">1865</div>
-								</div>
-								<div class="max-width-150">
-									<div id="appointment-chart"></div>
-								</div>
-							</div>
-						</div>
-						<div class="card-box min-height-200px pd-20" data-bgcolor="#265ed7">
-							<div class="d-flex justify-content-between pb-20 text-white">
-								<div class="icon h1 text-white">
-									<i class="fa fa-stethoscope" aria-hidden="true"></i>
-								</div>
-								<div class="font-14 text-right">
-									<div><i class="icon-copy ion-arrow-down-c"></i> 3.69%</div>
-									<div class="font-12">Since last month</div>
-								</div>
-							</div>
-							<div class="d-flex justify-content-between align-items-end">
-								<div class="text-white">
-									<div class="font-14">Surgery</div>
-									<div class="font-24 weight-500">250</div>
-								</div>
-								<div class="max-width-150">
-									<div id="surgery-chart"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+<title>
+  
+   Material Dashboard 2  by Creative Tim
+  
 
-				<div class="row">
-					<div class="col-lg-4 col-md-6 mb-20">
-						<div class="card-box height-100-p pd-20 min-height-200px">
-							<div class="d-flex justify-content-between pb-10">
-								<div class="h5 mb-0">Top Doctors</div>
-								<div class="dropdown">
-									<a
-										class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-										data-color="#1b3133"
-										href="#"
-										role="button"
-										data-toggle="dropdown"
-									>
-										<i class="dw dw-more"></i>
-									</a>
-									<div
-										class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
-									>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-eye"></i> View</a
-										>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-edit2"></i> Edit</a
-										>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-delete-3"></i> Delete</a
-										>
-									</div>
-								</div>
-							</div>
-							<div class="user-list">
-								<ul>
-									<li class="d-flex align-items-center justify-content-between">
-										<div class="name-avatar d-flex align-items-center pr-2">
-											<div class="avatar mr-2 flex-shrink-0">
-												<img
-													src="vendors/images/photo1.jpg"
-													class="border-radius-100 box-shadow"
-													width="50"
-													height="50"
-													alt=""
-												/>
-											</div>
-											<div class="txt">
-												<span
-													class="badge badge-pill badge-sm"
-													data-bgcolor="#e7ebf5"
-													data-color="#265ed7"
-													>4.9</span
-												>
-												<div class="font-14 weight-600">Dr. Neil Wagner</div>
-												<div class="font-12 weight-500" data-color="#b2b1b6">
-													Pediatrician
-												</div>
-											</div>
-										</div>
-										<div class="cta flex-shrink-0">
-											<a href="#" class="btn btn-sm btn-outline-primary"
-												>Schedule</a
-											>
-										</div>
-									</li>
-									<li class="d-flex align-items-center justify-content-between">
-										<div class="name-avatar d-flex align-items-center pr-2">
-											<div class="avatar mr-2 flex-shrink-0">
-												<img
-													src="vendors/images/photo2.jpg"
-													class="border-radius-100 box-shadow"
-													width="50"
-													height="50"
-													alt=""
-												/>
-											</div>
-											<div class="txt">
-												<span
-													class="badge badge-pill badge-sm"
-													data-bgcolor="#e7ebf5"
-													data-color="#265ed7"
-													>4.9</span
-												>
-												<div class="font-14 weight-600">Dr. Ren Delan</div>
-												<div class="font-12 weight-500" data-color="#b2b1b6">
-													Pediatrician
-												</div>
-											</div>
-										</div>
-										<div class="cta flex-shrink-0">
-											<a href="#" class="btn btn-sm btn-outline-primary"
-												>Schedule</a
-											>
-										</div>
-									</li>
-									<li class="d-flex align-items-center justify-content-between">
-										<div class="name-avatar d-flex align-items-center pr-2">
-											<div class="avatar mr-2 flex-shrink-0">
-												<img
-													src="vendors/images/photo3.jpg"
-													class="border-radius-100 box-shadow"
-													width="50"
-													height="50"
-													alt=""
-												/>
-											</div>
-											<div class="txt">
-												<span
-													class="badge badge-pill badge-sm"
-													data-bgcolor="#e7ebf5"
-													data-color="#265ed7"
-													>4.9</span
-												>
-												<div class="font-14 weight-600">Dr. Garrett Kincy</div>
-												<div class="font-12 weight-500" data-color="#b2b1b6">
-													Pediatrician
-												</div>
-											</div>
-										</div>
-										<div class="cta flex-shrink-0">
-											<a href="#" class="btn btn-sm btn-outline-primary"
-												>Schedule</a
-											>
-										</div>
-									</li>
-									<li class="d-flex align-items-center justify-content-between">
-										<div class="name-avatar d-flex align-items-center pr-2">
-											<div class="avatar mr-2 flex-shrink-0">
-												<img
-													src="vendors/images/photo4.jpg"
-													class="border-radius-100 box-shadow"
-													width="50"
-													height="50"
-													alt=""
-												/>
-											</div>
-											<div class="txt">
-												<span
-													class="badge badge-pill badge-sm"
-													data-bgcolor="#e7ebf5"
-													data-color="#265ed7"
-													>4.9</span
-												>
-												<div class="font-14 weight-600">Dr. Callie Reed</div>
-												<div class="font-12 weight-500" data-color="#b2b1b6">
-													Pediatrician
-												</div>
-											</div>
-										</div>
-										<div class="cta flex-shrink-0">
-											<a href="#" class="btn btn-sm btn-outline-primary"
-												>Schedule</a
-											>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6 mb-20">
-						<div class="card-box height-100-p pd-20 min-height-200px">
-							<div class="d-flex justify-content-between">
-								<div class="h5 mb-0">Diseases Report</div>
-								<div class="dropdown">
-									<a
-										class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle"
-										data-color="#1b3133"
-										href="#"
-										role="button"
-										data-toggle="dropdown"
-									>
-										<i class="dw dw-more"></i>
-									</a>
-									<div
-										class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list"
-									>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-eye"></i> View</a
-										>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-edit2"></i> Edit</a
-										>
-										<a class="dropdown-item" href="#"
-											><i class="dw dw-delete-3"></i> Delete</a
-										>
-									</div>
-								</div>
-							</div>
+  
 
-							<div id="diseases-chart"></div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 mb-20">
-						<div class="card-box height-100-p pd-20 min-height-200px">
-							<div class="max-width-300 mx-auto">
-								<img src="vendors/images/upgrade.svg" alt="" />
-							</div>
-							<div class="text-center">
-								<div class="h5 mb-1">Upgrade to Pro</div>
-								<div
-									class="font-14 weight-500 max-width-200 mx-auto pb-20"
-									data-color="#a6a6a7"
-								>
-									You can enjoy all our features by upgrading to pro.
-								</div>
-								<a href="#" class="btn btn-primary btn-lg">Upgrade</a>
-							</div>
-						</div>
-					</div>
-				</div>
+  
+</title>
 
-				<div class="card-box pb-10">
-					<div class="h5 pd-20 mb-0">Recent Patient</div>
-					<table class="data-table table nowrap">
-						<thead>
-							<tr>
-								<th class="table-plus">Name</th>
-								<th>Gender</th>
-								<th>Weight</th>
-								<th>Assigned Doctor</th>
-								<th>Admit Date</th>
-								<th>Disease</th>
-								<th class="datatable-nosort">Actions</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo4.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Jennifer O. Oster</div>
-										</div>
-									</div>
-								</td>
-								<td>Female</td>
-								<td>45 kg</td>
-								<td>Dr. Callie Reed</td>
-								<td>19 Oct 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Typhoid</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo5.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Doris L. Larson</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>76 kg</td>
-								<td>Dr. Ren Delan</td>
-								<td>22 Jul 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Dengue</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo6.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Joseph Powell</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>90 kg</td>
-								<td>Dr. Allen Hannagan</td>
-								<td>15 Nov 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Infection</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo9.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Jake Springer</div>
-										</div>
-									</div>
-								</td>
-								<td>Female</td>
-								<td>45 kg</td>
-								<td>Dr. Garrett Kincy</td>
-								<td>08 Oct 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Covid 19</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo1.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Paul Buckland</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>76 kg</td>
-								<td>Dr. Maxwell Soltes</td>
-								<td>12 Dec 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Asthma</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo2.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Neil Arnold</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>60 kg</td>
-								<td>Dr. Sebastian Tandon</td>
-								<td>30 Oct 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Diabetes</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo8.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Christian Dyer</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>80 kg</td>
-								<td>Dr. Sebastian Tandon</td>
-								<td>15 Jun 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Diabetes</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="table-plus">
-									<div class="name-avatar d-flex align-items-center">
-										<div class="avatar mr-2 flex-shrink-0">
-											<img
-												src="vendors/images/photo1.jpg"
-												class="border-radius-100 shadow"
-												width="40"
-												height="40"
-												alt=""
-											/>
-										</div>
-										<div class="txt">
-											<div class="weight-600">Doris L. Larson</div>
-										</div>
-									</div>
-								</td>
-								<td>Male</td>
-								<td>76 kg</td>
-								<td>Dr. Ren Delan</td>
-								<td>22 Jul 2020</td>
-								<td>
-									<span
-										class="badge badge-pill"
-										data-bgcolor="#e7ebf5"
-										data-color="#265ed7"
-										>Dengue</span
-									>
-								</td>
-								<td>
-									<div class="table-actions">
-										<a href="#" data-color="#265ed7"
-											><i class="icon-copy dw dw-edit2"></i
-										></a>
-										<a href="#" data-color="#e95959"
-											><i class="icon-copy dw dw-delete-3"></i
-										></a>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 
-				<div class="title pb-20 pt-20">
-					<h2 class="h3 mb-0">Quick Start</h2>
-				</div>
 
-				<div class="row">
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="vendors/images/medicine-bro.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Services</h3>
-								<p class="max-width-200">
-									We provide superior health care in a compassionate maner
-								</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="vendors/images/remedy-amico.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Medications</h3>
-								<p class="max-width-200">
-									Look for prescription and over-the-counter drug information.
-								</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 mb-20">
-						<a href="#" class="card-box d-block mx-auto pd-20 text-secondary">
-							<div class="img pb-30">
-								<img src="vendors/images/paper-map-cuate.svg" alt="" />
-							</div>
-							<div class="content">
-								<h3 class="h4">Locations</h3>
-								<p class="max-width-200">
-									Convenient locations when and where you need them.
-								</p>
-							</div>
-						</a>
-					</div>
-				</div>
+<!--     Fonts and icons     -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
-				<div class="footer-wrap pd-20 mb-20 card-box">
-					DeskApp - Bootstrap 4 Admin Template By
-					<a href="https://github.com/dropways" target="_blank"
-						>Ankit Hingarajiya</a
-					>
-				</div>
-			</div>
-		</div>
-		<!-- welcome modal start -->
-		<div class="welcome-modal">
-			<button class="welcome-modal-close">
-				<i class="bi bi-x-lg"></i>
-			</button>
-			<iframe
-				class="w-100 border-0"
-				src="https://embed.lottiefiles.com/animation/31548"
-			></iframe>
-			<div class="text-center">
-				<h3 class="h5 weight-500 text-center mb-2">
-					Open source
-					<span role="img" aria-label="gratitude">❤️</span>
-				</h3>
-				<div class="pb-2">
-					<a
-						class="github-button"
-						href="https://github.com/dropways/deskapp"
-						data-color-scheme="no-preference: dark; light: light; dark: light;"
-						data-icon="octicon-star"
-						data-size="large"
-						data-show-count="true"
-						aria-label="Star dropways/deskapp dashboard on GitHub"
-						>Star</a
-					>
-					<a
-						class="github-button"
-						href="https://github.com/dropways/deskapp/fork"
-						data-color-scheme="no-preference: dark; light: light; dark: light;"
-						data-icon="octicon-repo-forked"
-						data-size="large"
-						data-show-count="true"
-						aria-label="Fork dropways/deskapp dashboard on GitHub"
-						>Fork</a
-					>
-				</div>
-			</div>
-			<div class="text-center mb-1">
-				<div>
-					<a
-						href="https://github.com/dropways/deskapp"
-						target="_blank"
-						class="btn btn-light btn-block btn-sm"
-					>
-						<span class="text-danger weight-600">STAR US</span>
-						<span class="weight-600">ON GITHUB</span>
-						<i class="fa fa-github"></i>
-					</a>
-				</div>
-				<script
-					async
-					defer="defer"
-					src="https://buttons.github.io/buttons.js"
-				></script>
-			</div>
-			<a
-				href="https://github.com/dropways/deskapp"
-				target="_blank"
-				class="btn btn-success btn-sm mb-0 mb-md-3 w-100"
-			>
-				DOWNLOAD
-				<i class="fa fa-download"></i>
-			</a>
-			<p class="font-14 text-center mb-1 d-none d-md-block">
-				Available in the following technologies:
-			</p>
-			<div class="d-none d-md-flex justify-content-center h1 mb-0 text-danger">
-				<i class="fa fa-html5"></i>
-			</div>
-		</div>
-		<button class="welcome-modal-btn">
-			<i class="fa fa-download"></i> Download
-		</button>
-		<!-- welcome modal end -->
-		<!-- js -->
-		<script src="vendors/scripts/core.js"></script>
-		<script src="vendors/scripts/script.min.js"></script>
-		<script src="vendors/scripts/process.js"></script>
-		<script src="vendors/scripts/layout-settings.js"></script>
-		<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-		<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-		<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-		<script src="vendors/scripts/dashboard3.js"></script>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript
-			><iframe
-				src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS"
-				height="0"
-				width="0"
-				style="display: none; visibility: hidden"
-			></iframe
-		></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-	</body>
+<!-- Nucleo Icons -->
+<link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
+<link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<!-- CSS Files -->
+
+
+
+<link id="pagestyle" href="./assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+
+
+
+
+
+<!-- Nepcha Analytics (nepcha.com) -->
+<!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+<script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
+
+
+  </head>
+
+
+  <body class="g-sidenav-show  bg-gray-100">
+    
+
+    
+
+    
+      <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3   bg-gradient-dark" id="sidenav-main">
+
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard " target="_blank">
+      <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
+      <span class="ms-1 font-weight-bold text-white">Material Dashboard 2</span>
+    </a>
+  </div>
+
+
+  <hr class="horizontal light mt-0 mb-2">
+
+  <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      
+
+      
+        
+
+          
+
+          
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./dashboard.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">dashboard</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Dashboard</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./tables.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">table_view</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Tables</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./billing.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">receipt_long</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Billing</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./virtual-reality.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">view_in_ar</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Virtual Reality</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./rtl.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">RTL</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./notifications.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">notifications</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Notifications</span>
+  </a>
+</li>
+
+  
+    <li class="nav-item mt-3">
+      <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+    </li>
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./profile.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">person</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Profile</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./sign-in.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">login</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Sign In</span>
+  </a>
+</li>
+
+  
+<li class="nav-item">
+  <a class="nav-link text-white " href="./sign-up.html">
+    
+      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+        <i class="material-icons opacity-10">assignment</i>
+      </div>
+    
+    <span class="nav-link-text ms-1">Sign Up</span>
+  </a>
+</li>
+
+
+
+          
+
+        
+      
+    </ul>
+  </div>
+  
+  <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+    <div class="mx-3">
+      <a class="btn btn-outline-primary mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
+      <a class="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+    </div>
+    
+  </div>
+  
+</aside>
+
+      <main class="main-content border-radius-lg ">
+        <!-- Navbar -->
+
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">index</li>
+      </ol>
+      <h6 class="font-weight-bolder mb-0">index</h6>
+      
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          
+          <div class="input-group input-group-outline">
+            <label class="form-label">Type here...</label>
+            <input type="text" class="form-control">
+          </div>
+          
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+        <li class="nav-item d-flex align-items-center">
+          <a class="btn btn-outline-primary btn-sm mb-0 me-3" target="_blank" href="https://www.creative-tim.com/builder?ref=navbar-material-dashboard">Online Builder</a>
+        </li>
+        <li class="mt-2">
+          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
+        </li>
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item px-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0">
+            <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-bell cursor-pointer"></i>
+          </a>
+
+          <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+            <li class="mb-2">
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex py-1">
+                  <div class="my-auto">
+                    <img src="./assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                  </div>
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="text-sm font-weight-normal mb-1">
+                      <span class="font-weight-bold">New message</span> from Laur
+                    </h6>
+                    <p class="text-xs text-secondary mb-0">
+                      <i class="fa fa-clock me-1"></i>
+                      13 minutes ago
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="mb-2">
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex py-1">
+                  <div class="my-auto">
+                    <img src="./assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                  </div>
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="text-sm font-weight-normal mb-1">
+                      <span class="font-weight-bold">New album</span> by Travis Scott
+                    </h6>
+                    <p class="text-xs text-secondary mb-0">
+                      <i class="fa fa-clock me-1"></i>
+                      1 day
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item border-radius-md" href="javascript:;">
+                <div class="d-flex py-1">
+                  <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
+                    <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <title>credit-card</title> <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero"> <g transform="translate(1716.000000, 291.000000)"> <g transform="translate(453.000000, 454.000000)"> <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path> <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path> </g> </g> </g> </g> </svg>
+                  </div>
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="text-sm font-weight-normal mb-1">
+                      Payment successfully completed
+                    </h6>
+                    <p class="text-xs text-secondary mb-0">
+                      <i class="fa fa-clock me-1"></i>
+                      2 days
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item d-flex align-items-center">
+          <a href="./pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+            <i class="fa fa-user me-sm-1"></i>
+            
+            <span class="d-sm-inline d-none">Sign In</span>
+            
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- End Navbar -->
+
+
+        
+
+
+            <div class="container-fluid py-4">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h6>If you are not redirected automatically, follow <a href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard ">this link</a>.</h6>
+<div class="row">
+  <div class="col-lg-7 position-relative z-index-2">
+    <div class="card card-plain mb-4">
+      <div class="card-body p-3">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="d-flex flex-column h-100">
+  <h2 class="font-weight-bolder mb-0">General Statistics</h2>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-5 col-sm-5">
+        <div class="card  mb-2">
+  <div class="card-header p-3 pt-2">
+    <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-xl mt-n4 position-absolute">
+      <i class="material-icons opacity-10">weekend</i>
+    </div>
+    <div class="text-end pt-1">
+      <p class="text-sm mb-0 text-capitalize">Bookings</p>
+      <h4 class="mb-0">281</h4>
+    </div>
+  </div>
+
+  <hr class="dark horizontal my-0">
+  <div class="card-footer p-3">
+    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+55% </span>than last week</p>
+  </div>
+</div>
+
+        <div class="card  mb-2">
+  <div class="card-header p-3 pt-2">
+    <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary shadow text-center border-radius-xl mt-n4 position-absolute">
+      <i class="material-icons opacity-10">leaderboard</i>
+    </div>
+    <div class="text-end pt-1">
+      <p class="text-sm mb-0 text-capitalize">Today's Users</p>
+      <h4 class="mb-0">2,300</h4>
+    </div>
+  </div>
+
+  <hr class="dark horizontal my-0">
+  <div class="card-footer p-3">
+    <p class="mb-0"><span class="text-success text-sm font-weight-bolder">+3% </span>than last month</p>
+  </div>
+</div>
+
+      </div>
+      <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
+        <div class="card  mb-2">
+  <div class="card-header p-3 pt-2 bg-transparent">
+    <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+      <i class="material-icons opacity-10">store</i>
+    </div>
+    <div class="text-end pt-1">
+      <p class="text-sm mb-0 text-capitalize ">Revenue</p>
+      <h4 class="mb-0 ">34k</h4>
+    </div>
+  </div>
+
+  <hr class="horizontal my-0 dark">
+  <div class="card-footer p-3">
+    <p class="mb-0 "><span class="text-success text-sm font-weight-bolder">+1% </span>than yesterday</p>
+  </div>
+</div>
+
+        <div class="card ">
+  <div class="card-header p-3 pt-2 bg-transparent">
+    <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+      <i class="material-icons opacity-10">person_add</i>
+    </div>
+    <div class="text-end pt-1">
+      <p class="text-sm mb-0 text-capitalize ">Followers</p>
+      <h4 class="mb-0 ">+91</h4>
+    </div>
+  </div>
+
+  <hr class="horizontal my-0 dark">
+  <div class="card-footer p-3">
+    <p class="mb-0 ">Just updated</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-10">
+        <div class="card mb-4 ">
+  <div class="d-flex">
+    <div class="icon icon-shape icon-lg bg-gradient-success shadow text-center border-radius-xl mt-n3 ms-4">
+      <i class="material-icons opacity-10" aria-hidden="true">language</i>
+    </div>
+    <h6 class="mt-3 mb-2 ms-3 ">Sales by Country</h6>
+  </div>
+  <div class="card-body p-3">
+    <div class="row">
+      <div class="col-lg-6 col-md-7">
+        <div class="table-responsive">
+          <table class="table align-items-center ">
+            <tbody>
+              <tr>
+                <td class="w-30">
+                  <div class="d-flex px-2 py-1 align-items-center">
+                    <div>
+                      <img src="./assets/img/icons/flags/US.png" alt="Country flag">
+                    </div>
+                    <div class="ms-4">
+                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
+                      <h6 class="text-sm font-weight-normal mb-0 ">United States</h6>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">2500</h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">$230,900</h6>
+                  </div>
+                </td>
+                <td class="align-middle text-sm">
+                  <div class="col text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">29.9%</h6>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="w-30">
+                  <div class="d-flex px-2 py-1 align-items-center">
+                    <div>
+                      <img src="./assets/img/icons/flags/DE.png" alt="Country flag">
+                    </div>
+                    <div class="ms-4">
+                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
+                      <h6 class="text-sm font-weight-normal mb-0 ">Germany</h6>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">3.900</h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">$440,000</h6>
+                  </div>
+                </td>
+                <td class="align-middle text-sm">
+                  <div class="col text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">40.22%</h6>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="w-30">
+                  <div class="d-flex px-2 py-1 align-items-center">
+                    <div>
+                      <img src="./assets/img/icons/flags/GB.png" alt="Country flag">
+                    </div>
+                    <div class="ms-4">
+                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
+                      <h6 class="text-sm font-weight-normal mb-0 ">Great Britain</h6>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">1.400</h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">$190,700</h6>
+                  </div>
+                </td>
+                <td class="align-middle text-sm">
+                  <div class="col text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">23.44%</h6>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="w-30">
+                  <div class="d-flex px-2 py-1 align-items-center">
+                    <div>
+                      <img src="./assets/img/icons/flags/BR.png" alt="Country flag">
+                    </div>
+                    <div class="ms-4">
+                      <p class="text-xs font-weight-bold mb-0 ">Country:</p>
+                      <h6 class="text-sm font-weight-normal mb-0 ">Brasil</h6>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Sales:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">562</h6>
+                  </div>
+                </td>
+                <td>
+                  <div class="text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Value:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">$143,960</h6>
+                  </div>
+                </td>
+                <td class="align-middle text-sm">
+                  <div class="col text-center">
+                    <p class="text-xs font-weight-bold mb-0 ">Bounce:</p>
+                    <h6 class="text-sm font-weight-normal mb-0 ">32.14%</h6>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-5">
+        <div id="map" class="mt-0 mt-lg-n4"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-5 mb-lg-0 mb-4">
+    <div class="card z-index-2 mt-4">
+  <div class="card-body mt-n5 px-3">
+    <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1 mb-3">
+      <div class="chart">
+        <canvas id="chart-bars" class="chart-canvas" height="170"></canvas>
+      </div>
+    </div>
+    <h6 class="ms-2 mt-4 mb-0"> Active Users </h6>
+    <p class="text-sm ms-2"> (<span class="font-weight-bolder">+11%</span>) than last week </p>
+    <div class="container border-radius-lg">
+      <div class="row">
+        <div class="col-3 py-3 ps-0">
+          <div class="d-flex mb-2">
+            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-primary text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">groups</i>
+            </div>
+            <p class="text-xs my-auto font-weight-bold">Users</p>
+          </div>
+          <h4 class="font-weight-bolder">42K</h4>
+          <div class="progress w-75">
+            <div class="progress-bar bg-dark w-60" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="col-3 py-3 ps-0">
+          <div class="d-flex mb-2">
+            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-info text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">ads_click</i>
+            </div>
+            <p class="text-xs mt-1 mb-0 font-weight-bold">Clicks</p>
+          </div>
+          <h4 class="font-weight-bolder">1.7m</h4>
+          <div class="progress w-75">
+            <div class="progress-bar bg-dark w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="col-3 py-3 ps-0">
+          <div class="d-flex mb-2">
+            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-warning text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">receipt</i>
+            </div>
+            <p class="text-xs mt-1 mb-0 font-weight-bold">Sales</p>
+          </div>
+          <h4 class="font-weight-bolder">399$</h4>
+          <div class="progress w-75">
+            <div class="progress-bar bg-dark w-30" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+        <div class="col-3 py-3 ps-0">
+          <div class="d-flex mb-2">
+            <div class="icon icon-shape icon-xxs shadow border-radius-sm bg-gradient-danger text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">category</i>
+            </div>
+            <p class="text-xs mt-1 mb-0 font-weight-bold">Items</p>
+          </div>
+          <h4 class="font-weight-bolder">74</h4>
+          <div class="progress w-75">
+            <div class="progress-bar bg-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+  <div class="col-lg-7">
+    <div class="card z-index-2">
+  <div class="card-header pb-0">
+    <h6>Sales overview</h6>
+    <p class="text-sm">
+      <i class="fa fa-arrow-up text-success"></i>
+      <span class="font-weight-bold">4% more</span> in 2021
+    </p>
+  </div>
+  <div class="card-body p-3">
+    <div class="chart">
+      <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div id="globe" class="position-absolute end-0 top-10 mt-sm-3 mt-7 me-lg-7">
+      <canvas width="700" height="600" class="w-lg-100 h-lg-100 w-75 h-75 me-lg-0 me-n10 mt-lg-5"></canvas>
+    </div>
+  </div>
+</div>
+
+
+                <footer class="footer py-4  ">
+  <div class="container-fluid">
+    <div class="row align-items-center justify-content-lg-between">
+      <div class="col-lg-6 mb-lg-0 mb-4">
+        <div class="copyright text-center text-sm text-muted text-lg-start">
+          © <script>
+            document.write(new Date().getFullYear())
+          </script>,
+          made with <i class="fa fa-heart"></i> by
+          <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+          for a better web.
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+            </div>
+
+         
+       </main>
+    
+
+      
+          <div class="fixed-plugin">
+    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+      <i class="material-icons py-2">settings</i>
+    </a>
+    <div class="card shadow-lg">
+      <div class="card-header pb-0 pt-3">
+        <div class="float-start">
+          <h5 class="mt-3 mb-0">Material UI Configurator</h5>
+          <p>See our dashboard options.</p>
+        </div>
+        <div class="float-end mt-4">
+          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+            <i class="material-icons">clear</i>
+          </button>
+        </div>
+        <!-- End Toggle Button -->
+      </div>
+      <hr class="horizontal dark my-1">
+      <div class="card-body pt-sm-3 pt-0">
+        <!-- Sidebar Backgrounds -->
+        <div>
+          <h6 class="mb-0">Sidebar Colors</h6>
+        </div>
+        <a href="javascript:void(0)" class="switch-trigger background-color">
+          <div class="badge-colors my-2 text-start">
+            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+          </div>
+        </a>
+
+        <!-- Sidenav Type -->
+        
+        <div class="mt-3">
+          <h6 class="mb-0">Sidenav Type</h6>
+          <p class="text-sm">Choose between 2 different sidenav types.</p>
+        </div>
+
+        <div class="d-flex">
+          <button class="btn bg-gradient-dark px-3 mb-2 active" data-class="bg-gradient-dark" onclick="sidebarType(this)">Dark</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-transparent" onclick="sidebarType(this)">Transparent</button>
+          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+        </div>
+
+        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+        
+
+        <!-- Navbar Fixed -->
+        
+        <div class="mt-3 d-flex">
+          <h6 class="mb-0">Navbar Fixed</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+          </div>
+        </div>
+        
+
+        
+        <hr class="horizontal dark my-3">
+        <div class="mt-2 d-flex">
+          <h6 class="mb-0">Light / Dark</h6>
+          <div class="form-check form-switch ps-0 ms-auto my-auto">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+          </div>
+        </div>
+        <hr class="horizontal dark my-sm-4">
+        
+        
+        <a class="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
+        
+        
+        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
+        
+        <div class="w-100 text-center">
+          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
+          <h6 class="mt-3">Thank you for sharing!</h6>
+          
+          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+          </a>
+          
+
+          
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+          </a>
+          
+        </div>
+      </div>
+    </div>
+</div>
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   Core JS Files   -->
+<script src="./assets/js/core/popper.min.js" ></script>
+<script src="./assets/js/core/bootstrap.min.js" ></script>
+<script src="./assets/js/plugins/perfect-scrollbar.min.js" ></script>
+<script src="./assets/js/plugins/smooth-scrollbar.min.js" ></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  var win = navigator.platform.indexOf('Win') > -1;
+  if (win && document.querySelector('#sidenav-scrollbar')) {
+    var options = {
+      damping: '0.5'
+    }
+    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+  }
+</script>
+
+<!-- Github buttons -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc --><script src="./assets/js/material-dashboard.min.js?v=3.1.0"></script>
+  </body>
+
 </html>

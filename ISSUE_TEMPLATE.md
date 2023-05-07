@@ -1,15 +1,13 @@
-### Steps to reproduce
-<!--- Provide a set of unambiguous steps to reproduce this bug include code, if relevant  -->
-1. 
-2. 
-3. 
+<!--
+ IMPORTANT: Please use the following link to create a new issue:
 
-### Expected result
-<!--- Tell us what should happen -->
-1. 
+  https://www.creative-tim.com/new-issue/material-dashboard
 
-### Actual result
-<!--- Tell us what happens instead -->
-1. [Screenshot, logs]
+**If your issue was not created using the app above, it will be closed immediately.**
+-->
 
-<!--- (This may be platform independent comment) -->
+<!--
+Love Creative Tim? Do you need Angular, React, Vuejs or HTML? You can visit:
+👉  https://www.creative-tim.com/bundles
+👉  https://www.creative-tim.com
+-->
